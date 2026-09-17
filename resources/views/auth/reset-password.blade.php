@@ -1,0 +1,4 @@
+@component('layouts.auth', ['title' => 'Choose a new password | DocuFlow'])
+    <h1 class="serif text-4xl font-bold">Choose a new password</h1><p class="mt-2 text-sm text-[#637169]">Use a secure password with at least eight characters.</p>
+    <form method="POST" action="{{ route('password.update') }}" class="mt-6 grid gap-4">@csrf<input type="hidden" name="token" value="{{ $token }}"><label class="grid gap-1 text-sm font-semibold">Email address<input class="input" type="email" name="email" value="{{ old('email', $email) }}" required autofocus></label><label class="grid gap-1 text-sm font-semibold">New password<input class="input" type="password" name="password" minlength="8" required></label><label class="grid gap-1 text-sm font-semibold">Confirm new password<input class="input" type="password" name="password_confirmation" minlength="8" required></label><button class="button" type="submit">Reset password</button></form>
+@endcomponent
